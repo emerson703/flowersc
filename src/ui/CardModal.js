@@ -11,10 +11,6 @@ export class CardModal {
     this.scrollHint = document.getElementById('scroll-hint-badge');
     this.closeBtn = document.getElementById('btn-close-letter');
     this.confettiBtn = document.getElementById('btn-confetti-rain');
-    this.editBtn = document.getElementById('btn-custom-edit');
-    this.editDrawer = document.getElementById('edit-drawer');
-    this.customInput = document.getElementById('custom-text-input');
-    this.saveCustomBtn = document.getElementById('btn-save-custom-text');
 
     this.setupListeners();
   }
@@ -28,23 +24,6 @@ export class CardModal {
     this.confettiBtn?.addEventListener('click', () => {
       this.triggerRomanticConfetti();
       this.audioManager?.playChimeSound();
-    });
-
-    // Custom Edit Drawer toggle
-    this.editBtn?.addEventListener('click', () => {
-      this.editDrawer?.classList.toggle('hidden');
-    });
-
-    this.saveCustomBtn?.addEventListener('click', () => {
-      const customText = this.customInput?.value.trim();
-      if (customText) {
-        const closingP = document.querySelector('.closing-words');
-        if (closingP) {
-          closingP.textContent = customText;
-          this.triggerRomanticConfetti();
-          this.editDrawer?.classList.add('hidden');
-        }
-      }
     });
 
     // Hide scroll hint when user scrolls down
