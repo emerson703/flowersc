@@ -11,9 +11,7 @@
   "dependencies": {
     "three": "^0.160.0",
     "gsap": "^3.12.5",
-    "canvas-confetti": "^1.9.2"
-  },
-  "devDependencies": {
+    "canvas-confetti": "^1.9.2",
     "vite": "^5.1.0"
   }
 }
